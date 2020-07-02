@@ -1,0 +1,5 @@
+com\imooc\api\ApiApplication.class
+com\imooc\api\config\CorsConfig.class
+com\imooc\api\controller\PassportController.class
+com\imooc\api\config\Swagger2.class
+com\imooc\api\controller\HelloController.class

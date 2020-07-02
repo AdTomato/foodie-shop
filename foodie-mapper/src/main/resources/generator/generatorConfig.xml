@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--覆盖生成XML文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
+
+        <!-- 生成的实体类添加toString()方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <!-- 不生成注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/foodie-shop-dev"
+                        userId="foodie"
+                        password="123456">
+        </jdbcConnection>
+
+        <!-- domain类的位置 -->
+        <javaModelGenerator targetProject="src\main\java"
+                            targetPackage="com.imooc.pojo"/>
+
+        <!-- mapper xml的位置 -->
+        <sqlMapGenerator targetProject="src\main\resources"
+                         targetPackage="mapper"/>
+
+        <!-- mapper类的位置 -->
+        <javaClientGenerator targetProject="src\main\java"
+                             targetPackage="com.imooc.mapper"
+                             type="XMLMAPPER"/>
+
+        <!--        <table tableName="stu" domainObjectName="Stu"/>-->
+<!--        <table tableName="carousel" domainObjectName="Carousel"/>-->
+<!--        <table tableName="category" domainObjectName="Category"/>-->
+<!--        <table tableName="items" domainObjectName="Items"/>-->
+<!--        <table tableName="items" domainObjectName="Items"/>-->
+<!--        <table tableName="items_comments" domainObjectName="ItemsComments"/>-->
+<!--        <table tableName="items_img" domainObjectName="ItemsImg"/>-->
+<!--        <table tableName="items_param" domainObjectName="ItemsParam"/>-->
+<!--        <table tableName="items_spec" domainObjectName="ItemsSpec"/>-->
+<!--        <table tableName="order_items" domainObjectName="OrderItems"/>-->
+<!--        <table tableName="order_status" domainObjectName="OrderStatus"/>-->
+<!--        <table tableName="orders" domainObjectName="Orders"/>-->
+<!--        <table tableName="pdman_db_version" domainObjectName="PdmanDbVersion"/>-->
+<!--        <table tableName="user_address" domainObjectName="UserAddress"/>-->
+<!--        <table tableName="users" domainObjectName="Users"/>-->
+    </context>
+</generatorConfiguration>

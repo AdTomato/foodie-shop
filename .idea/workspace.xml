@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectId" id="1dOR4K9KayJG2WqOH77qzAvA2bB" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-common/src/main/java/com/imooc/utils" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.51431125" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\springboot\foodie-dev\foodie-mapper\src\main\resources\generator" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.imooc.mapper" />
+      <recent name="com.imooc.pojo" />
+      <recent name="com.imooc.mapper.my" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\springboot\foodie-dev\foodie-common\src\main\java\com\imooc\utils" />
+      <recent name="D:\springboot\foodie-dev\foodie-common\src\main\java" />
+      <recent name="D:\springboot\foodie-dev\foodie-pojo\src\main\resources\generator" />
+      <recent name="D:\springboot\foodie-dev\foodie-service\src\main\resources\generator" />
+      <recent name="D:\springboot\foodie-dev\foodie-mapper\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration name="TransTest.myTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="foodie-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.imooc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.imooc.test" />
+      <option name="MAIN_CLASS_NAME" value="com.imooc.test.TransTest" />
+      <option name="METHOD_NAME" value="myTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="foodie-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.imooc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.imooc.test" />
+      <option name="MAIN_CLASS_NAME" value="com.imooc.test.TransTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mybatis-generator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/foodie-mapper" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="foodie-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.imooc.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.imooc.api.ApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.TransTest.myTest" />
+      <item itemvalue="JUnit.TransTest.test" />
+      <item itemvalue="Maven.mybatis-generator" />
+      <item itemvalue="Spring Boot.ApiApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ApiApplication" />
+        <item itemvalue="JUnit.TransTest.test" />
+        <item itemvalue="JUnit.TransTest.myTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="" />
+      <created>1592293960673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592293960673</updated>
+      <workItem from="1592293963505" duration="199000" />
+      <workItem from="1592325609973" duration="2465000" />
+      <workItem from="1592355022330" duration="111000" />
+      <workItem from="1592362665288" duration="6328000" />
+      <workItem from="1592403732616" duration="3629000" />
+      <workItem from="1592441624391" duration="53000" />
+      <workItem from="1592451998384" duration="664000" />
+      <workItem from="1592475402208" duration="2114000" />
+      <workItem from="1592485443099" duration="133000" />
+      <workItem from="1592485585412" duration="170000" />
+      <workItem from="1592559403900" duration="996000" />
+      <workItem from="1592618024092" duration="11557000" />
+      <workItem from="1592794200931" duration="20000" />
+      <workItem from="1592931653844" duration="3538000" />
+      <workItem from="1592935262861" duration="106000" />
+      <workItem from="1592935376897" duration="450000" />
+      <workItem from="1592935838595" duration="91000" />
+      <workItem from="1592935938535" duration="111000" />
+      <workItem from="1592936059590" duration="124000" />
+      <workItem from="1592936197221" duration="286000" />
+      <workItem from="1592936492161" duration="76000" />
+      <workItem from="1592936589377" duration="17000" />
+      <workItem from="1592936615244" duration="58000" />
+      <workItem from="1592936681416" duration="20000" />
+      <workItem from="1592936711179" duration="161000" />
+      <workItem from="1592936890770" duration="156000" />
+      <workItem from="1592937058250" duration="122000" />
+      <workItem from="1592937189025" duration="223000" />
+      <workItem from="1592937435367" duration="156000" />
+      <workItem from="1592937603205" duration="56000" />
+      <workItem from="1592937669140" duration="131000" />
+      <workItem from="1592937812344" duration="122000" />
+      <workItem from="1592960447003" duration="1381000" />
+      <workItem from="1593359713496" duration="6542000" />
+      <workItem from="1593407112349" duration="34000" />
+      <workItem from="1593440501104" duration="1930000" />
+      <workItem from="1593478471663" duration="21000" />
+      <workItem from="1593626827452" duration="2952000" />
+      <workItem from="1593651270418" duration="618000" />
+      <workItem from="1593668950385" duration="758000" />
+      <workItem from="1593709479796" duration="493000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="582" y="183" key="#Inspections" timestamp="1592620602312">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="582" y="183" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1592620602312" />
+    <state x="817" y="355" key="#Notifications" timestamp="1592936122217">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="817" y="355" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1592936122217" />
+    <state x="452" y="74" key="#Plugins" timestamp="1592485598792">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="74" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1592485598792" />
+    <state x="312" y="0" key="#Project_Structure" timestamp="1592960606835">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="312" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1592960606835" />
+    <state x="410" y="166" width="1367" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592960761836">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="410" y="166" width="1367" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592960761836" />
+    <state x="718" y="159" key="#com.intellij.ide.util.MemberChooser" timestamp="1593626995630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="718" y="159" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593626995630" />
+    <state x="624" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592647666384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592647666384" />
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1593652629678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593652629678" />
+    <state width="1867" height="262" key="GridCell.Tab.0.bottom" timestamp="1593669708475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state width="1867" height="262" key="GridCell.Tab.0.center" timestamp="1593669708474">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708474" />
+    <state width="1867" height="262" key="GridCell.Tab.0.left" timestamp="1593669708474">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708474" />
+    <state width="1867" height="262" key="GridCell.Tab.0.right" timestamp="1593669708475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state width="1867" height="262" key="GridCell.Tab.1.bottom" timestamp="1593669708475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state width="1867" height="262" key="GridCell.Tab.1.center" timestamp="1593669708475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state width="1867" height="262" key="GridCell.Tab.1.left" timestamp="1593669708475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state width="1867" height="262" key="GridCell.Tab.1.right" timestamp="1593669708475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state x="437" y="192" key="IDE.errors.dialog" timestamp="1592363272774">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="437" y="192" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592363272774" />
+    <state x="376" y="0" key="SettingsEditor" timestamp="1593669706323">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="376" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593669706323" />
+    <state x="614" y="198" width="675" height="655" key="StructurePopup" timestamp="1593709502979">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="198" width="675" height="655" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1593709502979" />
+    <state x="210" y="54" key="new project wizard" timestamp="1592960858872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="210" y="54" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1592960858872" />
+    <state x="484" y="120" width="1144" height="828" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1592937928496">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="484" y="120" width="1144" height="828" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592937928496" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1592935025982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592935025982" />
+  </component>
+</project>
