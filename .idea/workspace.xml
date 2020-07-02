@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="" />
+    <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/target/foodie-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/target/foodie-api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-common/target/foodie-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-common/target/foodie-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -29,6 +56,7 @@
     <option name="delegateBuildToMaven" value="true" />
   </component>
   <component name="ProjectId" id="1dOR4K9KayJG2WqOH77qzAvA2bB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -43,9 +71,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-common/src/main/java/com/imooc/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -213,12 +242,49 @@
       <workItem from="1593626827452" duration="2952000" />
       <workItem from="1593651270418" duration="618000" />
       <workItem from="1593668950385" duration="758000" />
-      <workItem from="1593709479796" duration="493000" />
+      <workItem from="1593709479796" duration="2542000" />
     </task>
+    <task id="LOCAL-00001" summary="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中">
+      <created>1593710526388</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593710526388</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="183" key="#Inspections" timestamp="1592620602312">
@@ -249,42 +315,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592647666384" />
-    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1593652629678">
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1593711006666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593652629678" />
-    <state width="1867" height="262" key="GridCell.Tab.0.bottom" timestamp="1593669708475">
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593711006666" />
+    <state width="1867" height="564" key="GridCell.Tab.0.bottom" timestamp="1593711619695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
-    <state width="1867" height="262" key="GridCell.Tab.0.center" timestamp="1593669708474">
+    <state width="1867" height="564" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619695" />
+    <state width="1867" height="564" key="GridCell.Tab.0.center" timestamp="1593711619695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708474" />
-    <state width="1867" height="262" key="GridCell.Tab.0.left" timestamp="1593669708474">
+    <state width="1867" height="564" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619695" />
+    <state width="1867" height="564" key="GridCell.Tab.0.left" timestamp="1593711619695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708474" />
-    <state width="1867" height="262" key="GridCell.Tab.0.right" timestamp="1593669708475">
+    <state width="1867" height="564" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619695" />
+    <state width="1867" height="564" key="GridCell.Tab.0.right" timestamp="1593711619695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
-    <state width="1867" height="262" key="GridCell.Tab.1.bottom" timestamp="1593669708475">
+    <state width="1867" height="564" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619695" />
+    <state width="1867" height="564" key="GridCell.Tab.1.bottom" timestamp="1593711619552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
-    <state width="1867" height="262" key="GridCell.Tab.1.center" timestamp="1593669708475">
+    <state width="1867" height="564" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.1.center" timestamp="1593711619552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
-    <state width="1867" height="262" key="GridCell.Tab.1.left" timestamp="1593669708475">
+    <state width="1867" height="564" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.1.left" timestamp="1593711619552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
-    <state width="1867" height="262" key="GridCell.Tab.1.right" timestamp="1593669708475">
+    <state width="1867" height="564" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.1.right" timestamp="1593711619552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593669708475" />
+    <state width="1867" height="564" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.2.bottom" timestamp="1593711619552">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="564" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.2.center" timestamp="1593711619552">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="564" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.2.left" timestamp="1593711619552">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="564" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
+    <state width="1867" height="564" key="GridCell.Tab.2.right" timestamp="1593711619552">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1867" height="564" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593711619552" />
     <state x="437" y="192" key="IDE.errors.dialog" timestamp="1592363272774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,6 +379,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="614" y="198" width="675" height="655" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1593709502979" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1593710776148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593710776148" />
+    <state x="671" y="400" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1593711806986">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="671" y="400" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593711806986" />
     <state x="210" y="54" key="new project wizard" timestamp="1592960858872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
