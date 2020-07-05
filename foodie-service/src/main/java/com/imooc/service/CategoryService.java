@@ -2,6 +2,7 @@ package com.imooc.service;
 
 import com.imooc.pojo.Category;
 import com.imooc.vo.CategoryVO;
+import com.imooc.vo.NewItemsVO;
 
 import java.util.List;
 
@@ -31,5 +32,15 @@ public interface CategoryService {
      * @time 2020-07-05-18-14
      */
     List<CategoryVO> getSubCatList(Integer rootCatId);
+
+    /**
+     * 查询首页每个一级分类下的6条最新商品数据
+     *
+     * @param rootCatId 一级分类id
+     * @return 商品数据
+     * @author wangyong
+     * @time 2020-07-05-21-12
+     */
+    List<NewItemsVO> getSixNewItemsLazy(Integer rootCatId);
 
 }
