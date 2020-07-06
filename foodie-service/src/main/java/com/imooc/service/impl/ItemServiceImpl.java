@@ -1,17 +1,15 @@
 package com.imooc.service.impl;
 
-import com.imooc.mapper.ItemsImgMapper;
-import com.imooc.mapper.ItemsMapper;
-import com.imooc.mapper.ItemsParamMapper;
-import com.imooc.mapper.ItemsSpecMapper;
+import com.imooc.enums.CommentLevel;
+import com.imooc.mapper.*;
 import com.imooc.pojo.*;
 import com.imooc.service.ItemService;
+import com.imooc.vo.CommentLevelCountsVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.script.ScriptEngine;
 import java.util.List;
 
 @Service
@@ -28,6 +26,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Resource
     ItemsSpecMapper itemsSpecMapper;
+
+    @Resource
+    ItemsCommentsMapper itemsCommentsMapper;
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
@@ -61,5 +62,32 @@ public class ItemServiceImpl implements ItemService {
         criteria.andItemIdEqualTo(itemId);
         List<ItemsParam> itemsParams = itemsParamMapper.selectByExample(example);
         return itemsParams == null || itemsParams.size() == 0 ? null : itemsParams.get(0);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public CommentLevelCountsVO queryCommentCounts(String itemId) {
+        Integer goodCounts = getCommentCounts(itemId, CommentLevel.GOOD.type);
+        Integer normanCounts = getCommentCounts(itemId, CommentLevel.NORMAL.type);
+        Integer badCounts = getCommentCounts(itemId, CommentLevel.BAD.type);
+        Integer totalCounts = goodCounts + normanCounts + badCounts;
+
+        CommentLevelCountsVO countsVO = new CommentLevelCountsVO();
+        countsVO.setTotalCounts(totalCounts);
+        countsVO.setGoodCounts(goodCounts);
+        countsVO.setNormalCounts(normanCounts);
+        countsVO.setBadCounts(badCounts);
+        return countsVO;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    Integer getCommentCounts(String itemId, Integer level) {
+        ItemsCommentsExample example = new ItemsCommentsExample();
+        ItemsCommentsExample.Criteria criteria = example.createCriteria();
+        criteria.andItemIdEqualTo(itemId);
+        if (level != null) {
+            criteria.andCommentLevelEqualTo(level);
+        }
+        return Math.toIntExact(itemsCommentsMapper.countByExample(example));
     }
 }
