@@ -1,16 +1,24 @@
 package com.imooc.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.imooc.enums.CommentLevel;
 import com.imooc.mapper.*;
+import com.imooc.mapper.my.MyItemsMapper;
 import com.imooc.pojo.*;
 import com.imooc.service.ItemService;
+import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.CommentLevelCountsVO;
+import com.imooc.vo.ItemCommentVO;
+import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -29,6 +37,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Resource
     ItemsCommentsMapper itemsCommentsMapper;
+
+    @Resource
+    MyItemsMapper myItemsMapper;
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
@@ -81,6 +92,20 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult queryPagedComments(String itemId, Integer level, Integer page, Integer pageSize) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("itemId", itemId);
+        map.put("level", level);
+
+        // mybatis-pagehelper
+        PageHelper.startPage(page, pageSize);
+        List<ItemCommentVO> list = myItemsMapper.queryItemComments(map);
+
+        return setterPageGird(list, page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
     Integer getCommentCounts(String itemId, Integer level) {
         ItemsCommentsExample example = new ItemsCommentsExample();
         ItemsCommentsExample.Criteria criteria = example.createCriteria();
@@ -89,5 +114,15 @@ public class ItemServiceImpl implements ItemService {
             criteria.andCommentLevelEqualTo(level);
         }
         return Math.toIntExact(itemsCommentsMapper.countByExample(example));
+    }
+
+    private PagedGridResult setterPageGird(List<?> list, Integer page) {
+        PageInfo<?> pageInfo = new PageInfo<>(list);
+        PagedGridResult grid = new PagedGridResult();
+        grid.setPage(page);
+        grid.setRows(list);
+        grid.setTotal(pageInfo.getPages());
+        grid.setRecords(pageInfo.getTotal());
+        return grid;
     }
 }

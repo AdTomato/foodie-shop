@@ -6,6 +6,7 @@ import com.imooc.pojo.ItemsParam;
 import com.imooc.pojo.ItemsSpec;
 import com.imooc.service.ItemService;
 import com.imooc.utils.IMOOCJSONResult;
+import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.CommentLevelCountsVO;
 import com.imooc.vo.ItemInfoVO;
 import io.swagger.annotations.Api;
@@ -20,7 +21,7 @@ import java.util.List;
 @Api(value = "商品接口", tags = {"商品信息展示的相关接口"})
 @RestController
 @RequestMapping("/items")
-public class ItemsController {
+public class ItemsController extends BaseController {
 
     @Autowired
     ItemService itemService;
@@ -50,12 +51,32 @@ public class ItemsController {
     @ApiOperation(value = "查询商品评价等级", notes = "查询商品评价等级", httpMethod = "GET")
     @GetMapping("/commentLevel")
     public IMOOCJSONResult commentLevel(@ApiParam(name = "itemId", value = "商品id", required = true)
-                                @RequestParam String itemId) {
+                                        @RequestParam String itemId) {
         if (StringUtils.isBlank(itemId)) {
             return IMOOCJSONResult.errorMsg(null);
         }
         CommentLevelCountsVO countsVO = itemService.queryCommentCounts(itemId);
         return IMOOCJSONResult.ok(countsVO);
+    }
+
+    @ApiOperation(value = "查询商品评论", notes = "查询商品评论", httpMethod = "GET")
+    @GetMapping("/comments")
+    public IMOOCJSONResult comments(
+            @ApiParam(name = "itemId", value = "商品id", required = true) @RequestParam String itemId,
+            @ApiParam(name = "level", value = "评论等级", required = true) @RequestParam Integer level,
+            @ApiParam(name = "page", value = "第几页", required = true) @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "每页数量", required = true) @RequestParam Integer pageSize) {
+        if (StringUtils.isBlank(itemId)) {
+            return IMOOCJSONResult.errorMsg(null);
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = COMMENT_PAGE_SIZE;
+        }
+        PagedGridResult gridResult = itemService.queryPagedComments(itemId, level, page, pageSize);
+        return IMOOCJSONResult.ok(gridResult);
     }
 
 }
