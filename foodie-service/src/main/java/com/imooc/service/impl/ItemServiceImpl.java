@@ -7,9 +7,11 @@ import com.imooc.mapper.*;
 import com.imooc.mapper.my.MyItemsMapper;
 import com.imooc.pojo.*;
 import com.imooc.service.ItemService;
+import com.imooc.utils.DesensitizationUtil;
 import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.CommentLevelCountsVO;
 import com.imooc.vo.ItemCommentVO;
+import com.imooc.vo.SearchItemsVO;
 import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -101,7 +103,20 @@ public class ItemServiceImpl implements ItemService {
         // mybatis-pagehelper
         PageHelper.startPage(page, pageSize);
         List<ItemCommentVO> list = myItemsMapper.queryItemComments(map);
+        for (ItemCommentVO vo : list) {
+            vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
+        }
 
+        return setterPageGird(list, page);
+    }
+
+    @Override
+    public PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("keywords", keywords);
+        map.put("sort", sort);
+        PageHelper.startPage(page, pageSize);
+        List<SearchItemsVO> list = myItemsMapper.searchItems(map);
         return setterPageGird(list, page);
     }
 
