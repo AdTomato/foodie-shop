@@ -12,7 +12,6 @@ import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.CommentLevelCountsVO;
 import com.imooc.vo.ItemCommentVO;
 import com.imooc.vo.SearchItemsVO;
-import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -110,6 +109,7 @@ public class ItemServiceImpl implements ItemService {
         return setterPageGird(list, page);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
         Map<String, Object> map = new HashMap<>();
@@ -117,6 +117,17 @@ public class ItemServiceImpl implements ItemService {
         map.put("sort", sort);
         PageHelper.startPage(page, pageSize);
         List<SearchItemsVO> list = myItemsMapper.searchItems(map);
+        return setterPageGird(list, page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult searchItems(Integer catId, String sort, Integer page, Integer pageSize) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("catId", catId);
+        map.put("sort", sort);
+        PageHelper.startPage(page, pageSize);
+        List<SearchItemsVO> list = myItemsMapper.searchItemsByThirdCat(map);
         return setterPageGird(list, page);
     }
 

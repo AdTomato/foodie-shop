@@ -78,6 +78,7 @@ public class ItemsController extends BaseController {
         PagedGridResult gridResult = itemService.queryPagedComments(itemId, level, page, pageSize);
         return IMOOCJSONResult.ok(gridResult);
     }
+
     @ApiOperation(value = "搜索商品列表", notes = "搜索商品列表", httpMethod = "GET")
     @GetMapping("/search")
     public IMOOCJSONResult search(
@@ -95,6 +96,26 @@ public class ItemsController extends BaseController {
             pageSize = PAGE_SIZE;
         }
         PagedGridResult gridResult = itemService.searchItems(keywords, sort, page, pageSize);
+        return IMOOCJSONResult.ok(gridResult);
+    }
+
+    @ApiOperation(value = "通过分类id搜索商品列表", notes = "通过分类id搜索商品列表", httpMethod = "GET")
+    @GetMapping("/catItems")
+    public IMOOCJSONResult catItems(
+            @ApiParam(name = "catId", value = "三级分类id", required = true) @RequestParam Integer catId,
+            @ApiParam(name = "sort", value = "排序类型", required = true) @RequestParam String sort,
+            @ApiParam(name = "page", value = "第几页", required = true) @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "每页数量", required = true) @RequestParam Integer pageSize) {
+        if (catId == null) {
+            return IMOOCJSONResult.errorMsg(null);
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = PAGE_SIZE;
+        }
+        PagedGridResult gridResult = itemService.searchItems(catId, sort, page, pageSize);
         return IMOOCJSONResult.ok(gridResult);
     }
 
