@@ -12,14 +12,13 @@ import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.CommentLevelCountsVO;
 import com.imooc.vo.ItemCommentVO;
 import com.imooc.vo.SearchItemsVO;
+import com.imooc.vo.ShopcatVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -129,6 +128,15 @@ public class ItemServiceImpl implements ItemService {
         PageHelper.startPage(page, pageSize);
         List<SearchItemsVO> list = myItemsMapper.searchItemsByThirdCat(map);
         return setterPageGird(list, page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<ShopcatVO> queryItemsBySpecIds(String specIds) {
+        String[] ids = specIds.split(",");
+        List<String> specIdList = new ArrayList<>();
+        Collections.addAll(specIdList, ids);
+        return myItemsMapper.queryItemsBySpecIds(specIdList);
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
