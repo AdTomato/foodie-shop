@@ -3,6 +3,7 @@ package com.imooc.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.imooc.enums.CommentLevel;
+import com.imooc.enums.YesOrNo;
 import com.imooc.mapper.*;
 import com.imooc.mapper.my.MyItemsMapper;
 import com.imooc.pojo.*;
@@ -16,6 +17,7 @@ import com.imooc.vo.ShopcatVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -137,6 +139,40 @@ public class ItemServiceImpl implements ItemService {
         List<String> specIdList = new ArrayList<>();
         Collections.addAll(specIdList, ids);
         return myItemsMapper.queryItemsBySpecIds(specIdList);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public ItemsSpec queryItemSpecById(String specId) {
+        return itemsSpecMapper.selectByPrimaryKey(specId);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public String queryItemMainImgById(String itemId) {
+        ItemsImgExample example = new ItemsImgExample();
+        ItemsImgExample.Criteria criteria = example.createCriteria();
+        criteria.andItemIdEqualTo(itemId);
+        criteria.andIsMainEqualTo(YesOrNo.YES.type);
+        List<ItemsImg> itemsImgs = itemsImgMapper.selectByExample(example);
+        return CollectionUtils.isEmpty(itemsImgs) ? "" : itemsImgs.get(0).getUrl();
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void decreaseItemSpecStock(String specId, int buyCounts) {
+        // synchronized 不推荐使用，集群下无用，性能低下
+        // 锁数据库：不推荐，导致数据库性能低下
+        // 分布式锁 zookeeper redis
+
+        // lockUtil.getLock();  -- 加锁
+
+        // lockUtil.unLock();  -- 解锁
+
+        int result = myItemsMapper.decreaseItemSpecStock(specId, buyCounts);
+        if (result != 1) {
+            throw new RuntimeException("订单创建失败，原因：库存不足");
+        }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)

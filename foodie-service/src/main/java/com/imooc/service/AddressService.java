@@ -54,4 +54,14 @@ public interface AddressService {
      */
     void updateUserAddressToBeDefault(String userId, String addressId);
 
+    /**
+     * 获取用户收货地址
+     *
+     * @param userId    用户id
+     * @param addressId 地址id
+     * @return 用户收货地址
+     * @author wangyong
+     */
+    UserAddress queryUserAddress(String userId, String addressId);
+
 }

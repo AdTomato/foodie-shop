@@ -105,4 +105,28 @@ public interface ItemService {
      * @return 最新的购物车商品数据
      */
     List<ShopcatVO> queryItemsBySpecIds(String specIds);
+
+    /**
+     * 根据规格id查询商品规格
+     *
+     * @param specId 规格id
+     * @return 商品规格
+     */
+    ItemsSpec queryItemSpecById(String specId);
+
+    /**
+     * 根据商品id获取商品的主图
+     *
+     * @param itemId 商品id
+     * @return 商品主图url
+     */
+    String queryItemMainImgById(String itemId);
+
+    /**
+     * 减少库存
+     * @param specId 商品规格id
+     * @param buyCounts 购买数量
+     */
+    void decreaseItemSpecStock(String specId, int buyCounts);
+
 }

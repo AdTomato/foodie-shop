@@ -83,6 +83,7 @@ public class AddressServiceImpl implements AddressService {
         userAddressMapper.deleteByExample(example);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void updateUserAddressToBeDefault(String userId, String addressId) {
         UserAddress userAddress = new UserAddress();
@@ -94,5 +95,18 @@ public class AddressServiceImpl implements AddressService {
         userAddress.setIsDefault(YesOrNo.YES.type);
         userAddress.setId(addressId);
         userAddressMapper.updateByPrimaryKeySelective(userAddress);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public UserAddress queryUserAddress(String userId, String addressId) {
+
+        UserAddressExample example = new UserAddressExample();
+        UserAddressExample.Criteria criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(userId);
+        criteria.andIdEqualTo(addressId);
+        List<UserAddress> addressList = userAddressMapper.selectByExample(example);
+
+        return CollectionUtils.isEmpty(addressList) ? null : addressList.get(0);
     }
 }
