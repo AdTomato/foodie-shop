@@ -36,3 +36,7 @@ mapper:
 pagehelper:
   helper-dialect: mysql
   support-methods-arguments: true
+
+payment:
+  imooc-user-id: 7733279-1950746552
+  password: 3209-ir02-ir0k-r90o
