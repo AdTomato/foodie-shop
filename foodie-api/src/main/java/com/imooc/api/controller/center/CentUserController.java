@@ -1,6 +1,7 @@
 package com.imooc.api.controller.center;
 
 import com.imooc.api.controller.BaseController;
+import com.imooc.api.resource.FileUpload;
 import com.imooc.bo.center.CenterUserBO;
 import com.imooc.pojo.Users;
 import com.imooc.service.center.CenterUserService;
@@ -37,6 +38,9 @@ public class CentUserController extends BaseController {
     @Autowired
     CenterUserService centerUserService;
 
+    @Autowired
+    FileUpload fileUpload;
+
     @ApiOperation(value = "用户头像修改", notes = "用户头像修改", httpMethod = "POST")
     @PostMapping("/uploadFace")
     public IMOOCJSONResult uploadFace(
@@ -47,7 +51,8 @@ public class CentUserController extends BaseController {
             HttpServletResponse response) {
 
         // 定义头像保存地址
-        String fileSpec = IMAGE_USER_FACE_LOCATION;
+//        String fileSpec = IMAGE_USER_FACE_LOCATION;
+        String fileSpec = fileUpload.getImageUserFaceLocation();
 
         // 在路径上为每一个用户增加一个userId，用于区分不同用户上传
         String uploadPathPrefix = File.separator + userId;
