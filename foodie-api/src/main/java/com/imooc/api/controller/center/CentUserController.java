@@ -6,6 +6,7 @@ import com.imooc.bo.center.CenterUserBO;
 import com.imooc.pojo.Users;
 import com.imooc.service.center.CenterUserService;
 import com.imooc.utils.CookieUtils;
+import com.imooc.utils.DateUtil;
 import com.imooc.utils.IMOOCJSONResult;
 import com.imooc.utils.JsonUtils;
 import io.swagger.annotations.Api;
@@ -56,7 +57,7 @@ public class CentUserController extends BaseController {
 
         // 在路径上为每一个用户增加一个userId，用于区分不同用户上传
         String uploadPathPrefix = File.separator + userId;
-
+        String newFileName = null;
         // 开始文件上传
         if (file != null) {
             FileOutputStream fileOutputStream = null;
@@ -67,11 +68,22 @@ public class CentUserController extends BaseController {
                     // 文件重命名 imooc-face.png -> ["imooc-face, "png"]
                     String[] fileNameArr = fileName.split("\\.");
 
+                    if (fileNameArr.length < 1) {
+                        return IMOOCJSONResult.errorMsg("文件没有后缀名");
+                    }
+
                     // 获取文件的后缀名
                     String suffix = fileNameArr[fileNameArr.length - 1];
+
+                    if (!"png".equalsIgnoreCase(suffix)
+                            || !"jpg".equalsIgnoreCase(suffix)
+                            || !"jpeg".equalsIgnoreCase(suffix)) {
+                        return IMOOCJSONResult.errorMsg("图片格式不正确");
+                    }
+
                     // face-{userId}.png
                     // 文件名称重组, 覆盖式上传，增量式：额外拼接当前时间
-                    String newFileName = "face-" + userId + "." + suffix;
+                    newFileName = "face-" + userId + "." + suffix;
 
                     // 上传头像最终保存位置
                     String finalFacePath = fileSpec + uploadPathPrefix + File.separator + newFileName;
@@ -102,7 +114,9 @@ public class CentUserController extends BaseController {
         } else {
             return IMOOCJSONResult.errorMsg("文件不能为空！");
         }
-
+        // 更新用户头像到数据库
+        String faceUrl = fileUpload.getImageServerUrl() + "/" + userId + "/" + newFileName + "?t=" + DateUtil.getCurrentDateString(DateUtil.DATE_PATTERN);
+        centerUserService.updateUserFace(userId, faceUrl);
         return IMOOCJSONResult.ok();
     }
 
@@ -131,7 +145,7 @@ public class CentUserController extends BaseController {
     }
 
     private Map<String, String> getErrors(BindingResult result) {
-        Map<String, String > map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         List<FieldError> errorList = result.getFieldErrors();
         for (FieldError error : errorList) {
 

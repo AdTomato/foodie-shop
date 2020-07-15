@@ -16,4 +16,6 @@ public class FileUpload {
 
     private String imageUserFaceLocation;
 
+    private String imageServerUrl;
+
 }
