@@ -17,18 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="1. 实现用户的退出登陆功能，清空用户相关的cookie的信息">
-      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-pojo/src/main/java/com/imooc/bo/MerchantOrdersBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-pojo/src/main/java/com/imooc/vo/MerchantOrdersVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-pojo/src/main/java/com/imooc/vo/OrderVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/OrderJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/ApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/impl/OrderServiceImpl.java" afterDir="false" />
     </list>
@@ -86,7 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.obroom.plugin.mybatislog.indexNum" value="219" />
+    <property name="com.obroom.plugin.mybatislog.indexNum" value="229" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -285,7 +276,8 @@
       <workItem from="1594646341115" duration="2054000" />
       <workItem from="1594649459259" duration="9147000" />
       <workItem from="1594697489952" duration="1265000" />
-      <workItem from="1594736920195" duration="2202000" />
+      <workItem from="1594736920195" duration="4919000" />
+      <workItem from="1594812586397" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中">
       <created>1593710526388</created>
@@ -399,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594649069587</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="1. 完成支付的相关功能&#10;2. 使用RestTemplate进行restful接口的调用">
+      <created>1594740235635</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1594740235635</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +448,8 @@
     <MESSAGE value="1. 完成添加商品到购物车，不拍卖行购物车中删除商品，后端的相关存储接口，没有完成，后期添加redis相关功能&#10;2. 完成刷新购物车中的数据，主要是考虑到用户可能长时间未登录网站，商品的价格等参数可能发生改变" />
     <MESSAGE value="1. 新增用户地址相关的操作&#10;2. 用户地址的CRUD操作&#10;5. 用户设置默认地址" />
     <MESSAGE value="1. 完成用户下单的操作&#10;2. 创建订单&#10;3. 移除cookie中购物车的商品&#10;4. 更新库存，利用乐观锁来控制库存不能小于0" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 完成用户下单的操作&#10;2. 创建订单&#10;3. 移除cookie中购物车的商品&#10;4. 更新库存，利用乐观锁来控制库存不能小于0" />
+    <MESSAGE value="1. 完成支付的相关功能&#10;2. 使用RestTemplate进行restful接口的调用" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 完成支付的相关功能&#10;2. 使用RestTemplate进行restful接口的调用" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="183" key="#Inspections" timestamp="1594649139149">
@@ -472,10 +472,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="313" y="109" width="1367" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593943232392" />
-    <state x="718" y="159" key="#com.intellij.ide.util.MemberChooser" timestamp="1594659202395">
+    <state x="718" y="159" key="#com.intellij.ide.util.MemberChooser" timestamp="1594740848619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="159" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594659202395" />
+    <state x="718" y="159" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594740848619" />
     <state x="637" y="244" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594195587818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -488,66 +488,66 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="207" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592647666384" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1594651645461">
+    <state x="-40" y="111" width="1736" height="856" key="DiffContextDialog" timestamp="1594740334840">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594651645461" />
+    <state x="-40" y="111" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594740334840" />
     <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1594658713071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594658713071" />
-    <state width="1867" height="361" key="GridCell.Tab.0.bottom" timestamp="1594738486003">
+    <state width="1867" height="543" key="GridCell.Tab.0.bottom" timestamp="1594742826109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594738486003" />
-    <state width="1867" height="361" key="GridCell.Tab.0.center" timestamp="1594738486003">
+    <state width="1867" height="543" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826109" />
+    <state width="1867" height="543" key="GridCell.Tab.0.center" timestamp="1594742826109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594738486003" />
-    <state width="1867" height="361" key="GridCell.Tab.0.left" timestamp="1594738486002">
+    <state width="1867" height="543" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826109" />
+    <state width="1867" height="543" key="GridCell.Tab.0.left" timestamp="1594742826109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594738486002" />
-    <state width="1867" height="361" key="GridCell.Tab.0.right" timestamp="1594738486003">
+    <state width="1867" height="543" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826109" />
+    <state width="1867" height="543" key="GridCell.Tab.0.right" timestamp="1594742826109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594738486003" />
-    <state width="1867" height="361" key="GridCell.Tab.1.bottom" timestamp="1594659465851">
+    <state width="1867" height="543" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826109" />
+    <state width="1867" height="153" key="GridCell.Tab.1.bottom" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465851" />
-    <state width="1867" height="361" key="GridCell.Tab.1.center" timestamp="1594659465851">
+    <state width="1867" height="153" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.1.center" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465851" />
-    <state width="1867" height="361" key="GridCell.Tab.1.left" timestamp="1594659465851">
+    <state width="1867" height="153" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.1.left" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465851" />
-    <state width="1867" height="361" key="GridCell.Tab.1.right" timestamp="1594659465851">
+    <state width="1867" height="153" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.1.right" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465851" />
-    <state width="1867" height="361" key="GridCell.Tab.2.bottom" timestamp="1594659465852">
+    <state width="1867" height="153" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.2.bottom" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465852" />
-    <state width="1867" height="361" key="GridCell.Tab.2.center" timestamp="1594659465852">
+    <state width="1867" height="153" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.2.center" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465852" />
-    <state width="1867" height="361" key="GridCell.Tab.2.left" timestamp="1594659465852">
+    <state width="1867" height="153" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.2.left" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465852" />
-    <state width="1867" height="361" key="GridCell.Tab.2.right" timestamp="1594659465852">
+    <state width="1867" height="153" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state width="1867" height="153" key="GridCell.Tab.2.right" timestamp="1594742826104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="361" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594659465852" />
-    <state x="437" y="192" key="IDE.errors.dialog" timestamp="1594649437275">
+    <state width="1867" height="153" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594742826104" />
+    <state x="437" y="192" key="IDE.errors.dialog" timestamp="1594740767518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="437" y="192" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594649437275" />
+    <state x="437" y="192" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594740767518" />
     <state x="376" y="0" key="SettingsEditor" timestamp="1594738236123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

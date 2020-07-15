@@ -12,6 +12,7 @@ import com.imooc.pojo.*;
 import com.imooc.service.AddressService;
 import com.imooc.service.ItemService;
 import com.imooc.service.OrderService;
+import com.imooc.utils.DateUtil;
 import com.imooc.vo.MerchantOrdersVO;
 import com.imooc.vo.OrderVO;
 import org.aspectj.weaver.ast.Or;
@@ -25,6 +26,7 @@ import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author wangyong
@@ -164,8 +166,34 @@ public class OrderServiceImpl implements OrderService {
         orderStatusMapper.updateByPrimaryKeySelective(paidStatus);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public OrderStatus queryOrderStatusInfo(String orderId) {
         return orderStatusMapper.selectByPrimaryKey(orderId);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void closeOrder() {
+        OrderStatusExample example = new OrderStatusExample();
+        OrderStatusExample.Criteria criteria = example.createCriteria();
+        criteria.andOrderStatusEqualTo(OrderStatusEnum.WAIT_PAY.type);
+        List<OrderStatus> orderStatuses = orderStatusMapper.selectByExample(example);
+        for (OrderStatus orderStatus : orderStatuses) {
+            Date createdTime = orderStatus.getCreatedTime();
+            int days = DateUtil.daysBetween(createdTime, new Date());
+            if (days >= 1) {
+                doCloseOrder(orderStatus.getOrderId());
+            }
+        }
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void doCloseOrder(String orderId) {
+        OrderStatus orderStatus = new OrderStatus();
+        orderStatus.setOrderId(orderId);
+        orderStatus.setOrderStatus(OrderStatusEnum.CLOSE.type);
+        orderStatus.setCloseTime(new Date());
+        orderStatusMapper.updateByPrimaryKeySelective(orderStatus);
     }
 }
