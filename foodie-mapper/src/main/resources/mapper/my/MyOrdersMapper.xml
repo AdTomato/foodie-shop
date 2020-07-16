@@ -56,6 +56,7 @@
         <result column="payMethod" property="payMethod"/>
         <result column="realPayAmount" property="realPayAmount"/>
         <result column="postAmount" property="postAmount"/>
+        <result column="isComment" property="isComment"/>
         <result column="orderStatus" property="orderStatus"/>
         <collection property="subOrderItemList" column="orderId" select="getSubItems"/>
     </resultMap>
@@ -66,6 +67,7 @@
             o.pay_method AS paymethod,
             o.real_pay_amount AS realPayAmount,
             o.post_amount AS postAmount,
+            o.is_comment AS isComment,
             os.order_status AS orderStatus
         FROM
             orders AS o

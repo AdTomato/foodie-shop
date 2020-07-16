@@ -117,19 +117,5 @@ public class MyOrdersController extends BaseController {
         return IMOOCJSONResult.ok();
     }
 
-    /**
-     * 用于验证用户和订单是否有关联，避免非法用户调用
-     *
-     * @param userId  用户id
-     * @param orderId 订单id
-     * @return
-     */
-    private IMOOCJSONResult checkUserOrder(String orderId, String userId) {
-        Orders orders = myOrdersService.queryMyOrder(orderId, userId);
-        if (orders == null) {
-            return IMOOCJSONResult.errorMsg("订单不存在");
-        }
-        return IMOOCJSONResult.ok();
-    }
 }
 
