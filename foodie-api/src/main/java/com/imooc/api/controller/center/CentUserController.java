@@ -76,8 +76,8 @@ public class CentUserController extends BaseController {
                     String suffix = fileNameArr[fileNameArr.length - 1];
 
                     if (!"png".equalsIgnoreCase(suffix)
-                            || !"jpg".equalsIgnoreCase(suffix)
-                            || !"jpeg".equalsIgnoreCase(suffix)) {
+                            && !"jpg".equalsIgnoreCase(suffix)
+                            && !"jpeg".equalsIgnoreCase(suffix)) {
                         return IMOOCJSONResult.errorMsg("图片格式不正确");
                     }
 
