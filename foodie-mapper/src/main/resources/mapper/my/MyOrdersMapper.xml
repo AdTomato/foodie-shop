@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.imooc.mapper.my.MyOrdersMapper">
-    <resultMap id="myOrderVO" type="com.imooc.vo.MyOrdersVO">
+    <resultMap id="myOrderVODoNotUse" type="com.imooc.vo.MyOrdersVO">
         <id column="id" property="orderId"/>
         <result column="createdTime" property="createdTime"/>
         <result column="payMethod" property="payMethod"/>
@@ -19,7 +19,7 @@
             <id column="price" property="price"/>
         </collection>
     </resultMap>
-    <select id="queryMyOrders" resultMap="myOrderVO" parameterType="java.util.Map">
+    <select id="queryMyOrdersDoNotUse" resultMap="myOrderVODoNotUse" parameterType="java.util.Map">
         SELECT od.id              AS orderId,
                od.created_time    AS createdTime,
                od.pay_method      AS payMethod,
@@ -49,4 +49,51 @@
               </if>
         ORDER BY od.updated_time ASC
     </select>
+
+    <resultMap id="myOrderVO" type="com.imooc.vo.MyOrdersVO">
+        <id column="id" property="orderId"/>
+        <result column="createdTime" property="createdTime"/>
+        <result column="payMethod" property="payMethod"/>
+        <result column="realPayAmount" property="realPayAmount"/>
+        <result column="postAmount" property="postAmount"/>
+        <result column="orderStatus" property="orderStatus"/>
+        <collection property="subOrderItemList" column="orderId" select="getSubItems"/>
+    </resultMap>
+    <select id="queryMyOrders" resultMap="myOrderVO" parameterType="java.util.Map">
+        SELECT
+            o.id AS orderId,
+            o.created_time AS createdTime,
+            o.pay_method AS paymethod,
+            o.real_pay_amount AS realPayAmount,
+            o.post_amount AS postAmount,
+            os.order_status AS orderStatus
+        FROM
+            orders AS o
+        LEFT JOIN
+                order_status AS os
+            ON
+            o.id = os.order_id
+        WHERE
+            o.user_id = #{paramsMap.userId}
+        <if test="paramsMap.orderStatus != null">
+            AND os.order_status = #{paramsMap.orderStatus}
+        </if>
+    </select>
+
+    <select id="getSubItems"
+            parameterType="java.lang.String"
+            resultType="com.imooc.vo.MySubOrderItemVO">
+        SELECT
+            oi.item_id AS itemId,
+            oi.item_name AS itemName,
+            oi.item_img AS itemImg,
+            oi.item_spec_name AS itemSpecName,
+            oi.buy_counts AS buyCounts,
+            oi.price AS price
+        FROM
+            order_items AS oi
+        WHERE
+            order_id = #{orderId}
+    </select>
+
 </mapper>
