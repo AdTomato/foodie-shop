@@ -1,6 +1,7 @@
 package com.imooc.api.controller.center;
 
 import com.imooc.api.controller.BaseController;
+import com.imooc.bo.center.OrderItemsCommentBO;
 import com.imooc.enums.YesOrNo;
 import com.imooc.pojo.OrderItems;
 import com.imooc.pojo.Orders;
@@ -9,8 +10,11 @@ import com.imooc.utils.IMOOCJSONResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +23,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/mycomments")
 public class MyCommentsController extends BaseController {
+
+    private static final Logger log = LoggerFactory.getLogger(MyCommentsController.class);
 
     @Autowired
     MyCommentsService myCommentsService;
@@ -44,6 +50,29 @@ public class MyCommentsController extends BaseController {
         }
         List<OrderItems> list = myCommentsService.queryPendingComment(orderId);
         return IMOOCJSONResult.ok(list);
+    }
+
+    @ApiOperation(value = "保存评论列表", notes = "保存评论列表", httpMethod = "POST")
+    @PostMapping("/saveList")
+    public IMOOCJSONResult saveList(
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId,
+            @ApiParam(name = "orderId", value = "订单id", required = true)
+            @RequestParam String orderId,
+            @RequestBody List<OrderItemsCommentBO> commentList
+    ) {
+        log.info("评价内容：{}", commentList);
+        // 判断用户和订单是否关联
+        IMOOCJSONResult checkResult = checkUserOrder(orderId, userId);
+        if (checkResult.getStatus() != HttpStatus.OK.value()) {
+            return checkResult;
+        }
+        // 判断评论内容list不能为空
+        if (CollectionUtils.isEmpty(commentList)) {
+            return IMOOCJSONResult.errorMsg("评论内容不能为空");
+        }
+        myCommentsService.saveComments(orderId, userId, commentList);
+        return IMOOCJSONResult.ok();
     }
 
 }

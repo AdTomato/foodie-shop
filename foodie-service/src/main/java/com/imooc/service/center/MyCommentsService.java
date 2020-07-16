@@ -1,6 +1,7 @@
 package com.imooc.service.center;
 
 import com.imooc.bo.center.CenterUserBO;
+import com.imooc.bo.center.OrderItemsCommentBO;
 import com.imooc.pojo.OrderItems;
 import com.imooc.pojo.Users;
 
@@ -20,5 +21,14 @@ public interface MyCommentsService {
      * @return 商品
      */
     List<OrderItems> queryPendingComment(String orderId);
+
+    /**
+     * 保存用户的评论
+     *
+     * @param orderId     订单id
+     * @param userId      用户id
+     * @param commentList 评论列表
+     */
+    void saveComments(String orderId, String userId, List<OrderItemsCommentBO> commentList);
 
 }
