@@ -75,6 +75,8 @@
             o.id = os.order_id
         WHERE
             o.user_id = #{paramsMap.userId}
+        AND
+            o.is_delete = 0
         <if test="paramsMap.orderStatus != null">
             AND os.order_status = #{paramsMap.orderStatus}
         </if>
