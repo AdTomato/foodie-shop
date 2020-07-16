@@ -64,5 +64,17 @@ public class MyOrdersController extends BaseController {
         return IMOOCJSONResult.ok(gridResult);
     }
 
+    @ApiOperation(value = "商家发货", notes = "商家发货", httpMethod = "GET")
+    @GetMapping("/deliver")
+    public IMOOCJSONResult deliver(
+            @ApiParam(name = "orderId", value = "订单id", required = true)
+            @RequestParam String orderId
+    ) {
+        if (StringUtils.isBlank(orderId)) {
+            return IMOOCJSONResult.errorMsg("订单id不能为空");
+        }
+        myOrdersService.updateDeliverOrderStatus(orderId);
+        return IMOOCJSONResult.ok();
+    }
 }
 

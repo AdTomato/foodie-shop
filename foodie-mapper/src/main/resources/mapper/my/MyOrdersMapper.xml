@@ -51,7 +51,7 @@
     </select>
 
     <resultMap id="myOrderVO" type="com.imooc.vo.MyOrdersVO">
-        <id column="id" property="orderId"/>
+        <id column="orderId" property="orderId"/>
         <result column="createdTime" property="createdTime"/>
         <result column="payMethod" property="payMethod"/>
         <result column="realPayAmount" property="realPayAmount"/>
