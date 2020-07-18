@@ -4,6 +4,7 @@ import com.imooc.bo.center.CenterUserBO;
 import com.imooc.bo.center.OrderItemsCommentBO;
 import com.imooc.pojo.OrderItems;
 import com.imooc.pojo.Users;
+import com.imooc.utils.PagedGridResult;
 
 import java.util.List;
 
@@ -31,4 +32,13 @@ public interface MyCommentsService {
      */
     void saveComments(String orderId, String userId, List<OrderItemsCommentBO> commentList);
 
+    /**
+     * 我的评价查询分页
+     *
+     * @param userId   用户id
+     * @param page     页数
+     * @param pageSize 每页大小
+     * @return 我的评价
+     */
+    PagedGridResult queryMyComments(String userId, Integer page, Integer pageSize);
 }
