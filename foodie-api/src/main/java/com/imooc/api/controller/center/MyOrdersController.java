@@ -1,5 +1,6 @@
-package com.imooc.api.controller;
+package com.imooc.api.controller.center;
 
+import com.imooc.api.controller.BaseController;
 import com.imooc.bo.SubmitOrderBO;
 import com.imooc.enums.OrderStatusEnum;
 import com.imooc.enums.PayMethod;
@@ -12,6 +13,7 @@ import com.imooc.utils.CookieUtils;
 import com.imooc.utils.IMOOCJSONResult;
 import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.MerchantOrdersVO;
+import com.imooc.vo.OrderStatusCountsVO;
 import com.imooc.vo.OrderVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -41,7 +43,7 @@ public class MyOrdersController extends BaseController {
     @Autowired
     MyOrdersService myOrdersService;
 
-    @ApiOperation(value = "", notes = "", httpMethod = "POST")
+    @ApiOperation(value = "查询所有订单", notes = "查询所有订单", httpMethod = "POST")
     @PostMapping("/query")
     public IMOOCJSONResult query(
             @ApiParam(name = "userId", value = "用户id", required = true)
@@ -115,6 +117,43 @@ public class MyOrdersController extends BaseController {
             return IMOOCJSONResult.errorMsg("订单删除失败");
         }
         return IMOOCJSONResult.ok();
+    }
+
+    @ApiOperation(value = "获得订单状态数概况", notes = "获得订单状态数概况", httpMethod = "POST")
+    @PostMapping("/statusCounts")
+    public IMOOCJSONResult statusCounts(
+
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId
+    ) {
+        if (StringUtils.isBlank(userId)) {
+            return IMOOCJSONResult.errorMsg(null);
+        }
+        OrderStatusCountsVO result = myOrdersService.getOrderStatusCounts(userId);
+        return IMOOCJSONResult.ok(result);
+    }
+
+    @ApiOperation(value = "查询订单动向", notes = "查询订单动向", httpMethod = "POST")
+    @PostMapping("/trend")
+    public IMOOCJSONResult trend(
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId,
+            @ApiParam(name = "page", value = "查询下一页的第几页", required = false)
+            @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "分页的每一页显示的条数", required = false)
+            @RequestParam Integer pageSize
+    ) {
+        if (StringUtils.isBlank(userId)) {
+            return IMOOCJSONResult.errorMap(null);
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = COMMON_PAGE_SIZE;
+        }
+        PagedGridResult gridResult = myOrdersService.getOrderTrend(userId, page, pageSize);
+        return IMOOCJSONResult.ok(gridResult);
     }
 
 }
