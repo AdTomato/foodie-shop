@@ -33,7 +33,7 @@ public class BaseController {
      * 微信支付成功 -> 支付中心 -> 天天吃货
      * |-> 回调通知url
      */
-    String payReturnUrl = "http://wangyong.natappvip.cc/orders/notifyMerchantOrderPaid";
+    String payReturnUrl = "http://118.25.10.196:8088/orders/notifyMerchantOrderPaid";
 
     /**
      * 用户上传头像的位置

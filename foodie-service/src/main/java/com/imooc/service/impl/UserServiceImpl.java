@@ -8,7 +8,6 @@ import com.imooc.pojo.UsersExample;
 import com.imooc.service.UserService;
 import com.imooc.utils.DateUtil;
 import com.imooc.utils.MD5Utils;
-import org.apache.catalina.User;
 import org.n3r.idworker.Sid;
 import org.omg.CORBA.UserException;
 import org.springframework.beans.factory.annotation.Autowired;

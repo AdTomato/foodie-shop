@@ -9,9 +9,9 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+#    url: jdbc:mysql://localhost:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
-    password: Wy_123456
+#    password: Wy_123456
     hikari:
       connection-timeout: 30000  # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException，默认30秒
       minimum-idle: 5  # 最小连接数
@@ -26,13 +26,13 @@ spring:
       max-file-size: 51200  # 文件上传大小限制为500kb
       max-request-size: 51200  # 请求大小限制为500KB
   profiles:
-    active: dev  # 设置环境为生产环境
+    active: prod  # 设置环境为生产环境
 
 mybatis:
   type-aliases-package: com.imooc.pojo  # 所有POJO类所在包路径
   mapper-locations: classpath:mapper/**/*.xml  # mapper映射文件
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 mapper:
   #  mappers: com.imooc.my.mapper.MyMapper

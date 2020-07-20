@@ -17,10 +17,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="1. 实现用户的退出登陆功能，清空用户相关的cookie的信息">
-      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/WarStarterApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/profile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/file-upload-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/file-upload-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +88,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.obroom.plugin.mybatislog.indexNum" value="25" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dingtalk" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -281,7 +292,7 @@
       <workItem from="1594900822685" duration="15966000" />
       <workItem from="1594947651695" duration="140000" />
       <workItem from="1594992154290" duration="1226000" />
-      <workItem from="1595039534236" duration="7607000" />
+      <workItem from="1595039534236" duration="12957000" />
     </task>
     <task id="LOCAL-00001" summary="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中">
       <created>1593710526388</created>
@@ -507,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595058680414</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="1. 配置SpringBoot多环境部署">
+      <created>1595059189872</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1595059189872</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +559,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1. 查询每个一级分类下的最新6条商品数据" />
     <MESSAGE value="1. 商品信息接口的完成，包含商品图片列表，商品规格，商品参数" />
     <MESSAGE value="1. 商品评价等级数量接口的完成" />
     <MESSAGE value="1. 实现商品用户评论的返回&#10;2. 使用mybatis-pagehelper对商品用户进行分页操作&#10;3. 创建分页的封装类，用于返回给前端" />
@@ -566,7 +583,8 @@
     <MESSAGE value="1. 完成用户进行商品评价的功能" />
     <MESSAGE value="1. 完成用户评价相关功能" />
     <MESSAGE value="1. 完成查询订单动向接口&#10;2. 完成获得订单状态数概况接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 完成查询订单动向接口&#10;2. 完成获得订单状态数概况接口" />
+    <MESSAGE value="1. 配置SpringBoot多环境部署" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 配置SpringBoot多环境部署" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="183" key="#Inspections" timestamp="1594649139149">
@@ -593,10 +611,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="597" y="304" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594820057998" />
-    <state x="718" y="159" width="745" height="721" key="#com.intellij.ide.util.MemberChooser" timestamp="1595045683913">
+    <state x="718" y="159" width="745" height="721" key="#com.intellij.ide.util.MemberChooser" timestamp="1595061077553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="159" width="745" height="721" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595045683913" />
+    <state x="718" y="159" width="745" height="721" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595061077553" />
     <state x="637" y="244" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594195587818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -613,58 +631,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-40" y="111" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594909580939" />
-    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1594947691640">
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1595064814730">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594947691640" />
-    <state width="1867" height="313" key="GridCell.Tab.0.bottom" timestamp="1595059039276">
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595064814730" />
+    <state width="1867" height="313" key="GridCell.Tab.0.bottom" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039276" />
-    <state width="1867" height="313" key="GridCell.Tab.0.center" timestamp="1595059039276">
+    <state width="1867" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.0.center" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039276" />
-    <state width="1867" height="313" key="GridCell.Tab.0.left" timestamp="1595059039276">
+    <state width="1867" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.0.left" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039276" />
-    <state width="1867" height="313" key="GridCell.Tab.0.right" timestamp="1595059039276">
+    <state width="1867" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.0.right" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039276" />
-    <state width="1867" height="313" key="GridCell.Tab.1.bottom" timestamp="1595059039186">
+    <state width="1867" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.1.bottom" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039186" />
-    <state width="1867" height="313" key="GridCell.Tab.1.center" timestamp="1595059039186">
+    <state width="1867" height="313" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.1.center" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039186" />
-    <state width="1867" height="313" key="GridCell.Tab.1.left" timestamp="1595059039186">
+    <state width="1867" height="313" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.1.left" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039186" />
-    <state width="1867" height="313" key="GridCell.Tab.1.right" timestamp="1595059039186">
+    <state width="1867" height="313" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.1.right" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039186" />
-    <state width="1867" height="313" key="GridCell.Tab.2.bottom" timestamp="1595059039187">
+    <state width="1867" height="313" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.2.bottom" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039187" />
-    <state width="1867" height="313" key="GridCell.Tab.2.center" timestamp="1595059039186">
+    <state width="1867" height="313" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.2.center" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039186" />
-    <state width="1867" height="313" key="GridCell.Tab.2.left" timestamp="1595059039186">
+    <state width="1867" height="313" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.2.left" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039186" />
-    <state width="1867" height="313" key="GridCell.Tab.2.right" timestamp="1595059039187">
+    <state width="1867" height="313" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
+    <state width="1867" height="313" key="GridCell.Tab.2.right" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="313" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595059039187" />
+    <state width="1867" height="313" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
     <state x="437" y="192" key="IDE.errors.dialog" timestamp="1594901865566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

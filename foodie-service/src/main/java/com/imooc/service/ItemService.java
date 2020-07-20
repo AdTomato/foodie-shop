@@ -8,7 +8,6 @@ import com.imooc.utils.PagedGridResult;
 import com.imooc.vo.CommentLevelCountsVO;
 import com.imooc.vo.ItemCommentVO;
 import com.imooc.vo.ShopcatVO;
-import org.apache.tomcat.util.http.fileupload.MultipartStream;
 
 import java.util.List;
 import java.util.Map;
