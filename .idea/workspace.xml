@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -17,21 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="1. 实现用户的退出登陆功能，清空用户相关的cookie的信息">
-      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/WarStarterApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/profile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/resources/file-upload-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/resources/file-upload-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-service/src/main/java/com/imooc/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-common/foodie-common.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +47,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.1" />
+        <option name="mavenHome" value="D:\apache-maven-3.6.1" />
         <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -87,8 +79,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.obroom.plugin.mybatislog.indexNum" value="25" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dingtalk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bjwq" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -214,6 +205,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -293,6 +285,24 @@
       <workItem from="1594947651695" duration="140000" />
       <workItem from="1594992154290" duration="1226000" />
       <workItem from="1595039534236" duration="12957000" />
+      <workItem from="1595254628763" duration="1459000" />
+      <workItem from="1595300189581" duration="10000" />
+      <workItem from="1595431997039" duration="475000" />
+      <workItem from="1595465502711" duration="21000" />
+      <workItem from="1595483394328" duration="627000" />
+      <workItem from="1595508228447" duration="4500000" />
+      <workItem from="1595833896412" duration="43000" />
+      <workItem from="1595833991698" duration="47000" />
+      <workItem from="1595834051511" duration="59000" />
+      <workItem from="1596461445264" duration="2563000" />
+      <workItem from="1596503553871" duration="200000" />
+      <workItem from="1596622541868" duration="730000" />
+      <workItem from="1596675362563" duration="2231000" />
+      <workItem from="1596701602758" duration="27000" />
+      <workItem from="1597135614928" duration="1181000" />
+      <workItem from="1597140493073" duration="14000" />
+      <workItem from="1597221176982" duration="604000" />
+      <workItem from="1597241066814" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中">
       <created>1593710526388</created>
@@ -525,11 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1595059189872</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="1. 设置打包方式改为war包的方式">
+      <created>1595254665839</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1595254665839</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -559,7 +576,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1. 商品信息接口的完成，包含商品图片列表，商品规格，商品参数" />
     <MESSAGE value="1. 商品评价等级数量接口的完成" />
     <MESSAGE value="1. 实现商品用户评论的返回&#10;2. 使用mybatis-pagehelper对商品用户进行分页操作&#10;3. 创建分页的封装类，用于返回给前端" />
     <MESSAGE value="1. 商品的搜索接口的完成，实现默认排序，销量排序，价格排序的功能&#10;2. mybatis使用&lt;choose&gt;标签实现排序的选择，&lt;when&gt;标签里面的条件特殊字符需要转义" />
@@ -584,7 +600,8 @@
     <MESSAGE value="1. 完成用户评价相关功能" />
     <MESSAGE value="1. 完成查询订单动向接口&#10;2. 完成获得订单状态数概况接口" />
     <MESSAGE value="1. 配置SpringBoot多环境部署" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 配置SpringBoot多环境部署" />
+    <MESSAGE value="1. 设置打包方式改为war包的方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 设置打包方式改为war包的方式" />
   </component>
   <component name="WindowStateProjectService">
     <state x="582" y="183" key="#Inspections" timestamp="1594649139149">
@@ -595,10 +612,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="817" y="355" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1592936122217" />
-    <state x="452" y="74" key="#Plugins" timestamp="1594195751911">
+    <state x="452" y="74" key="#Plugins" timestamp="1595834003047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="74" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1594195751911" />
+    <state x="452" y="74" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1595834003047" />
     <state x="312" y="0" key="#Project_Structure" timestamp="1595042203028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -631,10 +648,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-40" y="111" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594909580939" />
-    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1595064814730">
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1597241078814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595064814730" />
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597241078814" />
     <state width="1867" height="313" key="GridCell.Tab.0.bottom" timestamp="1595074029141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -683,10 +700,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1867" height="313" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595074029141" />
-    <state x="437" y="192" key="IDE.errors.dialog" timestamp="1594901865566">
+    <state x="437" y="192" key="IDE.errors.dialog" timestamp="1596675777750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="437" y="192" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594901865566" />
+    <state x="437" y="192" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596675777750" />
     <state x="657" y="153" key="RollbackChangesDialog" timestamp="1594914984850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
