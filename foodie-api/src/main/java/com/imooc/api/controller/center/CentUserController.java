@@ -144,20 +144,6 @@ public class CentUserController extends BaseController {
         return IMOOCJSONResult.ok();
     }
 
-    private Map<String, String> getErrors(BindingResult result) {
-        Map<String, String> map = new HashMap<>();
-        List<FieldError> errorList = result.getFieldErrors();
-        for (FieldError error : errorList) {
-
-            // 发生验证错误所对应的某一个属性
-            String errorField = error.getField();
-            // 验证错误的信息
-            String errorMsg = error.getDefaultMessage();
-            map.put(errorField, errorMsg);
-        }
-        return map;
-    }
-
     private Users setNullProperty(Users userResult) {
         userResult.setPassword(null);
         userResult.setMobile(null);
