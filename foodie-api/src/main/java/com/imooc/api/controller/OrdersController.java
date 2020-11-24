@@ -7,6 +7,7 @@ import com.imooc.pojo.OrderStatus;
 import com.imooc.service.OrderService;
 import com.imooc.utils.CookieUtils;
 import com.imooc.utils.IMOOCJSONResult;
+import com.imooc.utils.RedisOperator;
 import com.imooc.vo.MerchantOrdersVO;
 import com.imooc.vo.OrderVO;
 import io.swagger.annotations.Api;
@@ -16,11 +17,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * @author wangyong
@@ -35,6 +39,9 @@ public class OrdersController extends BaseController {
 
     @Autowired
     RestTemplate restTemplate;
+
+    @Resource
+    RedisOperator redisOperator;
 
     @Value("${payment.imooc-user-id}")
     private String imoocUserId;
@@ -55,12 +62,22 @@ public class OrdersController extends BaseController {
                 && !submitOrderBO.getPayMethod().equals(PayMethod.ALIPAY.type)) {
             return IMOOCJSONResult.errorMsg("支付方式不支持");
         }
+
+        String userId = submitOrderBO.getUserId();
+
+        Map<Object, Object> shopcat = redisOperator.hgetall(FOODIE_SHOPCART + ":" + userId);
+        if (CollectionUtils.isEmpty(shopcat)) {
+            return IMOOCJSONResult.errorMsg("购物数据不正确");
+        }
         // 1. 创建订单
-        OrderVO orderVO = orderService.createOrder(submitOrderBO);
+        OrderVO orderVO = orderService.createOrder(submitOrderBO, shopcat);
         String orderId = orderVO.getOrderId();
 
         // 2. 创建订单以后，移除购物车中已结算（已提交）的商品
-        // TODO 整合redis之后，完善购物车中的已结算商品清除，并且同步到前端cookie
+        // 整合redis之后，完善购物车中的已结算商品清除，并且同步到前端cookie
+        orderVO.getToBeRemovedShopcatdList().forEach(shopcatBO -> {
+            redisOperator.hdel(FOODIE_SHOPCART + ":" + userId, shopcatBO.getSpecId());
+        });
         CookieUtils.setCookie(request, response, FOODIE_SHOPCART, "");
         // 3. 向支付中心发送当前订单，用于保存支付中心的订单数据
         MerchantOrdersVO merchantOrdersVO = orderVO.getMerchantOrdersVO();

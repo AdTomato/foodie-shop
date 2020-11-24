@@ -3,7 +3,8 @@ package com.imooc.service;
 import com.imooc.bo.SubmitOrderBO;
 import com.imooc.pojo.OrderStatus;
 import com.imooc.vo.OrderVO;
-import org.omg.PortableInterceptor.ServerRequestInfo;
+
+import java.util.Map;
 
 /**
  * 订单service
@@ -16,9 +17,10 @@ public interface OrderService {
      * 创建订单数据
      *
      * @param submitOrderBO 前端提交过来的订单数据
+     * @param shopcat
      * @return 订单VO
      */
-    OrderVO createOrder(SubmitOrderBO submitOrderBO);
+    OrderVO createOrder(SubmitOrderBO submitOrderBO, Map<Object, Object> shopcat);
 
     /**
      * 更新订单状态

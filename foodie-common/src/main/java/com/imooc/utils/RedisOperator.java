@@ -190,6 +190,24 @@ public class RedisOperator {
 		return redisTemplate.opsForHash().entries(key);
 	}
 
+
+	/**
+	 * HashSet
+	 *
+	 * @param key 键
+	 * @param map 对应多个键值
+	 * @return true 成功 false 失败
+	 */
+	public Boolean hmset(String key, Map<Object, Object> map) {
+		try {
+			redisTemplate.opsForHash().putAll(key, map);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 	// List（列表）
 
 	/**

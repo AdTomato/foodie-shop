@@ -7,10 +7,10 @@ spring:
     password: Wy_123456
 
   redis:
-    database: 1
+    database: 0
     port: 6379
-    host: 192.168.138.130
-    password: wangyong58987464
+    host: 127.0.0.1
+    password: H3yuncom
 
 mybatis:
   configuration:
