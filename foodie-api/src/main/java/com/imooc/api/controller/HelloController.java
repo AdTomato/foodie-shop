@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/hello")
 public class HelloController {
 
     @GetMapping("/hello")

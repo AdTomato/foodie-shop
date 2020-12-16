@@ -25,6 +25,8 @@ spring:
     multipart:
       max-file-size: 51200  # 文件上传大小限制为500kb
       max-request-size: 51200  # 请求大小限制为500KB
+  session:
+    store-type: redis
   profiles:
     active: dev  # 设置环境为生产环境
 
