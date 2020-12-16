@@ -1,20 +1,26 @@
 package com.imooc.api.controller;
 
 import com.imooc.pojo.Orders;
+import com.imooc.pojo.Users;
 import com.imooc.service.center.MyOrdersService;
 import com.imooc.utils.IMOOCJSONResult;
+import com.imooc.utils.RedisOperator;
+import com.imooc.vo.UserVO;
 import io.swagger.models.auth.In;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import sun.security.provider.PolicySpiFile;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @author wangyong
@@ -25,9 +31,13 @@ public class BaseController {
     public static final String FOODIE_SHOPCART = "shopcart";
     public static final Integer COMMON_PAGE_SIZE = 10;
     public static final Integer PAGE_SIZE = 20;
+    public static final String REDIS_USER_TOKEN = "redis_user_token";
 
     @Autowired
     public MyOrdersService myOrdersService;
+
+    @Resource
+    RedisOperator redisOperator;
 
     /**
      * 支付中心调用地址
@@ -45,6 +55,20 @@ public class BaseController {
      */
     public static final String IMAGE_USER_FACE_LOCATION = "E:" + File.separator + "file" + File.separator + "foodie";
 
+    /**
+     * user 转换成userVO
+     * @param user 用户信息
+     * @return userVO
+     */
+    public UserVO convertUserVO(Users user) {
+        // 实现用户redis会话
+        String uniqueToken = UUID.randomUUID().toString().trim();
+        redisOperator.set(REDIS_USER_TOKEN + ":" + user.getId(), uniqueToken);
+        UserVO userVO = new UserVO();
+        BeanUtils.copyProperties(user, userVO);
+        userVO.setUserUniqueToken(uniqueToken);
+        return userVO;
+    }
 
     /**
      * 用于验证用户和订单是否有关联，避免非法用户调用

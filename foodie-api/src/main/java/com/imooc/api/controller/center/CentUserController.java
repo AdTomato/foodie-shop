@@ -9,6 +9,7 @@ import com.imooc.utils.CookieUtils;
 import com.imooc.utils.DateUtil;
 import com.imooc.utils.IMOOCJSONResult;
 import com.imooc.utils.JsonUtils;
+import com.imooc.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -116,7 +117,9 @@ public class CentUserController extends BaseController {
         }
         // 更新用户头像到数据库
         String faceUrl = fileUpload.getImageServerUrl() + "/" + userId + "/" + newFileName + "?t=" + DateUtil.getCurrentDateString(DateUtil.DATE_PATTERN);
-        centerUserService.updateUserFace(userId, faceUrl);
+        Users user = centerUserService.updateUserFace(userId, faceUrl);
+        UserVO userVO = convertUserVO(user);
+        CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(userVO), true);
         return IMOOCJSONResult.ok();
     }
 
@@ -137,10 +140,11 @@ public class CentUserController extends BaseController {
 
         Users user = centerUserService.updateUserInfo(userId, centerUserBO);
 
-        setNullProperty(user);
-        CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(user), true);
+        // 增加令牌token，会整合redis，分布式会话
+        UserVO userVO = convertUserVO(user);
+        CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(userVO), true);
 
-        // TODO 后续要改，增加令牌token，会整合redis，分布式会话
+
         return IMOOCJSONResult.ok();
     }
 
