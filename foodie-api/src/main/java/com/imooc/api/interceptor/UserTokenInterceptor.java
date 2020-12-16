@@ -1,9 +1,14 @@
 package com.imooc.api.interceptor;
 
+import com.imooc.utils.RedisOperator;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,6 +18,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author wangyong
  */
 public class UserTokenInterceptor implements HandlerInterceptor {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserTokenInterceptor.class);
+    public static final String REDIS_USER_TOKEN = "redis_user_token";
+    @Resource
+    RedisOperator redisOperator;
 
     /**
      * 拦截请求，在访问controller调用之前
@@ -26,7 +36,24 @@ public class UserTokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("进入到拦截器，被拦截");
-        return false;
+        String headerUserId = request.getHeader("headerUserId");
+        String headerUserToken = request.getHeader("headerUserToken");
+        if (StringUtils.isNotBlank(headerUserId) && StringUtils.isNotBlank(headerUserToken)) {
+            String uniqueToken = redisOperator.get(REDIS_USER_TOKEN + ":" + headerUserId);
+            if (StringUtils.isNotBlank(uniqueToken)) {
+                if (!uniqueToken.equals(headerUserToken)) {
+                    logger.info("出现异地登录的情况");
+                    return false;
+                }
+            } else {
+                logger.info("请登录");
+                return false;
+            }
+        } else {
+            logger.info("请登录");
+            return false;
+        }
+        return true;
     }
 
     /**
