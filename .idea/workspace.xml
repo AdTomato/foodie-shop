@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b4138af9-0100-4106-83e0-d88dc4b03de6" name="Default Changelist" comment="1. 实现用户的退出登陆功能，清空用户相关的cookie的信息">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/config/WebMvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/interceptor/UserTokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-api/src/main/java/com/imooc/api/interceptor/UserTokenInterceptor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.obroom.plugin.mybatislog.indexNum" value="15" />
+    <property name="com.obroom.plugin.mybatislog.indexNum" value="28" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../wh-security-service" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -130,17 +129,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TransTest.myTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="foodie-api" />
       <extension name="coverage">
@@ -362,7 +350,7 @@
       <workItem from="1608131004041" duration="111000" />
       <workItem from="1608131125795" duration="405000" />
       <workItem from="1608132426163" duration="37000" />
-      <workItem from="1608132474211" duration="3576000" />
+      <workItem from="1608132474211" duration="4676000" />
     </task>
     <task id="LOCAL-00001" summary="1. 实现天天吃货商城框架的基本搭建&#10;2. 使用mybatis-generator生成持久层的代码，包含domain，mapper代码&#10;3. 使用hikari作为数据源&#10;4. 使用第三方包，org-n3r.idworker来确保数据的id值全局唯一&#10;5. 添加IMOOCJSONResult作为接口的返回类&#10;6. 添加CookieUtils工具类用于cookie的操作&#10;7. 添加DateUtil工具类用于时间的操作&#10;8. 添加JsonUtil工具类用于json的转换&#10;9. 添加MD5Utils用于密码的md5加密&#10;10. 添加用户名是否存在校验接口、用户注册接口、用户登陆接口，用户登陆以及注册成功后将用户信息写入cookie中">
       <created>1593710526388</created>
@@ -658,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608134182214</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="1. 添加相应的拦截的接口">
+      <created>1608136401625</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1608136401625</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,7 +687,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1. 添加定时任务，将超时订单关闭&#10;2. 定时任务存在弊端，后期使用RabbitMQ来改进" />
     <MESSAGE value="1. 完成用户中心，用户基本信息的返回&#10;2. 用户基本信息的修改&#10;3. 使用hibernate.validator用于BO的校验，避免在controller层对BO进行数据的校验" />
     <MESSAGE value="1. 完成头像上传的功能，保存到本地中" />
     <MESSAGE value="1. 使用属性资源文件properties与类映射，解决可以通过在资源文件中配置文件的上传路径" />
@@ -717,7 +711,8 @@
     <MESSAGE value="1. 使用redis存储token信息(UUID数据)&#10;2. 创建UserVO,传递给前端&#10;3. 修改本地静态资源的映射，修改映射路径" />
     <MESSAGE value="1. SpringSession整合&#10;2. 去除SpringSession安全自动装配" />
     <MESSAGE value="1. 添加自定义拦截器功能，并将自定义的拦截器注册到容器中&#10;2. 添加拦截hello请求" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 添加自定义拦截器功能，并将自定义的拦截器注册到容器中&#10;2. 添加拦截hello请求" />
+    <MESSAGE value="1. 添加相应的拦截的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 添加相应的拦截的接口" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="316" key="#com.intellij.ide.util.MemberChooser" timestamp="1608133799804">
@@ -728,54 +723,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608134494747" />
-    <state width="1867" height="283" key="GridCell.Tab.0.bottom" timestamp="1608135568795">
+    <state width="1867" height="238" key="GridCell.Tab.0.bottom" timestamp="1608137153911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568795" />
-    <state width="1867" height="283" key="GridCell.Tab.0.center" timestamp="1608135568795">
+    <state width="1867" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153911" />
+    <state width="1867" height="238" key="GridCell.Tab.0.center" timestamp="1608137153911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568795" />
-    <state width="1867" height="283" key="GridCell.Tab.0.left" timestamp="1608135568795">
+    <state width="1867" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153911" />
+    <state width="1867" height="238" key="GridCell.Tab.0.left" timestamp="1608137153911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568795" />
-    <state width="1867" height="283" key="GridCell.Tab.0.right" timestamp="1608135568795">
+    <state width="1867" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153911" />
+    <state width="1867" height="238" key="GridCell.Tab.0.right" timestamp="1608137153911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568795" />
-    <state width="1867" height="283" key="GridCell.Tab.1.bottom" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153911" />
+    <state width="1867" height="238" key="GridCell.Tab.1.bottom" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.1.center" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.1.center" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.1.left" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.1.left" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.1.right" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.1.right" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.2.bottom" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.2.bottom" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.2.center" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.2.center" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.2.left" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.2.left" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
-    <state width="1867" height="283" key="GridCell.Tab.2.right" timestamp="1608135568677">
+    <state width="1867" height="238" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
+    <state width="1867" height="238" key="GridCell.Tab.2.right" timestamp="1608137153912">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1867" height="283" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608135568677" />
+    <state width="1867" height="238" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608137153912" />
     <state x="344" y="78" key="SettingsEditor" timestamp="1608132461924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

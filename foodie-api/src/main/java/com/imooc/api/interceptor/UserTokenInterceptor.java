@@ -1,5 +1,7 @@
 package com.imooc.api.interceptor;
 
+import com.imooc.utils.IMOOCJSONResult;
+import com.imooc.utils.JsonUtils;
 import com.imooc.utils.RedisOperator;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -11,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  * 描述: 用户信息拦截器
@@ -43,17 +47,41 @@ public class UserTokenInterceptor implements HandlerInterceptor {
             if (StringUtils.isNotBlank(uniqueToken)) {
                 if (!uniqueToken.equals(headerUserToken)) {
                     logger.info("出现异地登录的情况");
+                    returnErrorResponse(response, IMOOCJSONResult.errorMsg("出现异地登录的情况"));
                     return false;
                 }
             } else {
                 logger.info("请登录");
+                returnErrorResponse(response, IMOOCJSONResult.errorMsg("请登录"));
                 return false;
             }
         } else {
             logger.info("请登录");
+            returnErrorResponse(response, IMOOCJSONResult.errorMsg("请登录"));
             return false;
         }
         return true;
+    }
+
+    private void returnErrorResponse(HttpServletResponse response, IMOOCJSONResult result) {
+        OutputStream out = null;
+        try {
+            response.setCharacterEncoding("utf-8");
+            response.setContentType("text/json");
+            out = response.getOutputStream();
+            out.write(JsonUtils.objectToJson(result).getBytes());
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     /**
